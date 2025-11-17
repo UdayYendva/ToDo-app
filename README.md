@@ -39,6 +39,3 @@ Prevents race conditions under concurrent requests
 
 Standard library only (net/http, encoding/json)
 
-No database — uses in-memory maps
-
-Fast for demos, learning, and prototypes
