@@ -1,4 +1,3 @@
-<<<<<<< <<<<<<<<<<<<<<<<<<<<<<<<<<HEAD>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 This project is a simple REST API built using Go.  
 It allows you to manage **Users** and their **To-Do Tasks** with basic CRUD operations.
 
