@@ -11,7 +11,7 @@ type User struct {
 
 type Tasks struct {
 	ID     int    `json:"id"`
-	UserID int    `json:"userId"`
+	UserID int    `json:"usersId"`
 	Task   string `json:"task"`
 	Status bool   `json:"status"`
 }

@@ -103,7 +103,7 @@ func createToDoForUser(w http.ResponseWriter, r *http.Request) { // to create ta
 
 	err = json.NewDecoder(r.Body).Decode(&todo)
 	if err != nil {
-		http.Error(w, err.Error(), http.StatusBadRequest)
+		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
 	}
 	if todo.Task == "" {

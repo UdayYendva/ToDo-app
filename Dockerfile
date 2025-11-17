@@ -22,6 +22,6 @@ WORKDIR /root/
 COPY --from=builder /usr/local/bin/todo-app .
 
 
-EXPOSE 8080
+EXPOSE 8081
 
 CMD ["./todo-app"]
