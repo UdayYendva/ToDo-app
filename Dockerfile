@@ -9,7 +9,7 @@ COPY go.mod go.sum ./
 
 RUN go mod download
 
-COPY . .
+COPY . .git
 
 
 RUN go build -o /usr/local/bin/todo-app ./...
@@ -22,6 +22,6 @@ WORKDIR /root/
 COPY --from=builder /usr/local/bin/todo-app .
 
 
-EXPOSE 8080
+EXPOSE 8081
 
 CMD ["./todo-app"]

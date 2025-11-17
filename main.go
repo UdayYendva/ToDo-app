@@ -35,7 +35,7 @@ func main() {
 	fmt.Println("  GET    /users/{id}/tasks -> List tasks for user")
 	fmt.Println("=====================================")
 
-	log.Println("⚡ Starting server on http://localhost:8081")
+	log.Println("⚡ Starting server on http://localhost:8081\n")
 
 	if err := server.ListenAndServe(); err != nil {
 		log.Fatalf("Could not listen on :8081: %v\n", err)
