@@ -70,6 +70,18 @@ func deleteUsers(w http.ResponseWriter, r *http.Request) {
 
 	w.WriteHeader(http.StatusNoContent)
 }
+func getAllUsers(w http.ResponseWriter, r *http.Request) {
+	UserMutex.RLock()
+	defer UserMutex.RUnlock()
+
+	users := []User{}
+	for _, user := range UserList {
+		users = append(users, user)
+	}
+
+	w.Header().Set("Content-Type", "application/json")
+	json.NewEncoder(w).Encode(users)
+}
 
 func createToDoForUser(w http.ResponseWriter, r *http.Request) {
 	userID, err := strconv.Atoi(r.PathValue("userID"))

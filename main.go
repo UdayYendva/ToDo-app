@@ -13,6 +13,7 @@ func main() {
 	router.HandleFunc("POST /users", createUsers)
 	router.HandleFunc("GET /users/{id}", getUsers)
 	router.HandleFunc("DELETE /users/{id}", deleteUsers)
+	router.HandleFunc("GET /users", getAllUsers)
 
 	router.HandleFunc("POST /users/{userID}/todos", createToDoForUser)
 	router.HandleFunc("GET /users/{userID}/tasks", getTasksForUser)
@@ -35,6 +36,7 @@ func main() {
 	fmt.Println("=====================================")
 
 	log.Println("⚡ Starting server on http://localhost:8081")
+
 	if err := server.ListenAndServe(); err != nil {
 		log.Fatalf("Could not listen on :8081: %v\n", err)
 	}
