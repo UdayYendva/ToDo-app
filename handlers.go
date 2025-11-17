@@ -27,7 +27,7 @@ func createUsers(w http.ResponseWriter, r *http.Request) {
 
 }
 
-func getUsers(w http.ResponseWriter, r *http.Request) {
+func getUsers(w http.ResponseWriter, r *http.Request) { // to get users created
 
 	id, err := strconv.Atoi(r.PathValue("id"))
 	if err != nil {
@@ -49,7 +49,7 @@ func getUsers(w http.ResponseWriter, r *http.Request) {
 
 }
 
-func deleteUsers(w http.ResponseWriter, r *http.Request) {
+func deleteUsers(w http.ResponseWriter, r *http.Request) { // to delete users based on id
 	id, err := strconv.Atoi(r.PathValue("id"))
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusBadRequest)
@@ -70,7 +70,7 @@ func deleteUsers(w http.ResponseWriter, r *http.Request) {
 
 	w.WriteHeader(http.StatusNoContent)
 }
-func getAllUsers(w http.ResponseWriter, r *http.Request) {
+func getAllUsers(w http.ResponseWriter, r *http.Request) { // to get all users
 	UserMutex.RLock()
 	defer UserMutex.RUnlock()
 
@@ -83,7 +83,7 @@ func getAllUsers(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode(users)
 }
 
-func createToDoForUser(w http.ResponseWriter, r *http.Request) {
+func createToDoForUser(w http.ResponseWriter, r *http.Request) { // to create tasks to users created
 	userID, err := strconv.Atoi(r.PathValue("userID"))
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusBadRequest)
@@ -128,7 +128,7 @@ func createToDoForUser(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(http.StatusCreated)
 	json.NewEncoder(w).Encode(todo)
 }
-func getTasksForUser(w http.ResponseWriter, r *http.Request) {
+func getTasksForUser(w http.ResponseWriter, r *http.Request) { // to get tasks for the users
 	userID, err := strconv.Atoi(r.PathValue("userID"))
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusBadRequest)

@@ -21,9 +21,6 @@ var UserList = make(map[int]User)
 var TaskList = make(map[int][]Tasks)
 
 var NextUser = 1
-
 var NextTask = 1
-
 var UserMutex = sync.RWMutex{}
-
 var TaskMutex = sync.RWMutex{}

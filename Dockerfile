@@ -9,7 +9,7 @@ COPY go.mod go.sum ./
 
 RUN go mod download
 
-COPY . .
+COPY . .git
 
 
 RUN go build -o /usr/local/bin/todo-app ./...
